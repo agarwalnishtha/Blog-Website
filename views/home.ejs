@@ -1,0 +1,20 @@
+<%-include("partials/header");-%>
+
+<h1>Home</h1>
+<p> <%= startingContent %> </p>
+<!-- for(var i=0 ; i<postArray.length ; i++){
+   console.log( postArray[i].title );
+ }
+
+forEach method is equivalent to for loop used for targeting each and every element of the array sequentially -->
+
+<% postArray.forEach(function(postArray){ %>
+<h1><%= postArray.title %></h1>
+<p>
+  <%= postArray.content.substring(0,100) %> ...
+  <a href="/posts/<%=postArray.title%>">Read More</a>
+</p>
+<% }); %>
+
+
+<%-include("partials/footer");-%>
